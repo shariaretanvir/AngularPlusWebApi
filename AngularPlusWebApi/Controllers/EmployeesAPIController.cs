@@ -21,7 +21,7 @@ namespace AngularPlusWebApi.Controllers
         {
             return db.Employees;
         }
-        //i
+        
         // GET: api/EmployeesAPI/5
         [ResponseType(typeof(Employee))]
         public IHttpActionResult GetEmployee(int id)
