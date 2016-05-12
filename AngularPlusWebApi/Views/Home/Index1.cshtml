@@ -1,0 +1,70 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>View</title>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/myJs/MyAngular.js"></script>
+    
+    
+
+</head>
+<body>
+    <div ng-app="myModule" ng-controller="myController as e">
+        Number Of Rows Show : <input type="text" step="1" min="0" max="5" ng-model="limitno"/>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        DateOfBirth
+                    </th>
+                    <th>
+                        Gender
+                    </th>
+                    <th>
+                        Salary(Number)
+                    </th>
+                    <th>
+                        Salary(Currency)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employe in e.emp | limitTo : limitno : 1 ">
+                    <td>
+                        {{employe.Name | uppercase}}
+                    </td>
+                    <td>
+                        {{employe.DateOfBirth | date : "dd/mm/yyyy" }}
+                    </td>
+                    <td>
+                        {{employe.Gender | lowercase}}
+                    </td>
+                    <td>
+                        {{employe.Salary | number : 1}}
+                    </td>
+                    <td>
+                        {{employe.Salary | currency : "$" : 2}}
+                    </td>
+                </tr>
+            </tbody>
+            
+        </table>
+        @*First Name :   {{emp.FirstName}}
+        Last Name :   {{emp.LastName}}
+        Gender :   {{emp.Gender}}*@
+    </div>
+
+    <div>
+        @*{{ 40 + 50}} {{message}}*@
+    </div>
+</body>
+</html>
