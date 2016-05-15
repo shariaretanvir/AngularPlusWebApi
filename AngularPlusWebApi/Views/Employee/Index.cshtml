@@ -9,9 +9,50 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <style type="text/css">
+    #tblContainer, #tblcollections, #tblCRUD, td {
+    border: double;
+    }
+
+    th {
+    background-color: darkgray;
+    }
+
+    #dvcollection {
+    height: 500px;
+    overflow-y: scroll;
+    }    
+    </style>
+    
+
+
+    <h2>Using Angular for Performing CRUD Operations</h2>
 </head>
-<body>
-    <div> 
-    </div>
+<body ng-app="app">
+<div>
+    <table>
+        <tr>
+            <table>
+                <tr>
+                    <td>
+                        Employee Number:
+                    </td>
+                    <td>
+                        {{EmpNo}}
+                    </td>
+                </tr>
+            </table>
+        </tr>
+        <tr>
+            <table>
+                <tr>
+                    <th>
+                        Empno
+                    </th>
+                </tr>
+            </table>
+        </tr>
+    </table>
+</div>
 </body>
 </html>

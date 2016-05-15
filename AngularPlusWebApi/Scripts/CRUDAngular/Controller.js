@@ -11,7 +11,7 @@ app.controller("crudController", function($scope, crudService) {
         var promiseGet = crudService.getEmployees();
 
         promiseGet.then(function(p1) {
-            $scope.data = p1.data;
+            $scope.Employees = p1.data;
         },
             function(errorp1) {
                 $log.error('failure loading employee',errorp1);
