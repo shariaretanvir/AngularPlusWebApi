@@ -14,7 +14,7 @@ namespace AngularPlusWebApi.Controllers
 {
     public class EmployeesAPIController : ApiController
     {
-        private ApplicationEntities db = new ApplicationEntities();
+        private AngularCrudEntities db = new AngularCrudEntities();
 
         // GET: api/EmployeesAPI
         public IQueryable<Employee> GetEmployees()

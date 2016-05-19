@@ -13,10 +13,10 @@ namespace AngularPlusWebApi.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ApplicationEntities : DbContext
+    public partial class AngularCrudEntities : DbContext
     {
-        public ApplicationEntities()
-            : base("name=ApplicationEntities")
+        public AngularCrudEntities()
+            : base("name=AngularCrudEntities")
         {
         }
     

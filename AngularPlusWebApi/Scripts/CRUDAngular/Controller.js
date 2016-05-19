@@ -2,9 +2,9 @@
 /// <reference path="Module.js" />
 
 
-app.controller("crudController", function($scope, crudService) {
+app.controller("crudController", function ($scope, crudService) {
     $scope.IsNewRecord = 1; //The flag for the new record
-
+    
     loadRecords();
 
     function loadRecords() {
@@ -25,7 +25,7 @@ app.controller("crudController", function($scope, crudService) {
             EmpName: $scope.EmpName,
             Salary: $scope.Salary,
             DeptName: $scope.DeptName,
-            Designation: $scope.Designation,
+            Designation: $scope.Designation
         };
         //if 1 then save 
         if ($scope.IsNewRecord === 1) {
@@ -40,9 +40,11 @@ app.controller("crudController", function($scope, crudService) {
         }
             //else edit
         else {
+           
             var promiseput = crudService.put($scope.EmpNo, Employee);
             promiseput.then(function(p1) {
-                    console.message("Successfully Edited");
+                console.message("Successfully Edited");
+                    
                 },
                 function(errorp1) {
                     console.log("Error:" + errorp1);
@@ -51,7 +53,7 @@ app.controller("crudController", function($scope, crudService) {
     };
 
     $scope.delete = function() {
-        var promisedelete = crudService.delete(EmpNo);
+        var promisedelete = crudService.delete($scope.EmpNo);
         promisedelete.then(function(p1) {
             $scope.message = "Delete Successfully";
             $scope.EmpNo = 0,
@@ -72,6 +74,7 @@ app.controller("crudController", function($scope, crudService) {
         var allEmploee = crudService.get(Employee.EmpNo);
 
         allEmploee.then(function(p1) {
+            //alert(p1.data.DeptName);
             var res = p1.data;
             $scope.EmpNo = res.EmpNo;
             $scope.EmpName = res.EmpName;

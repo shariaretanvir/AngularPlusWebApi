@@ -4,55 +4,186 @@
 }
 
 <!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-    <style type="text/css">
+<style type="text/css">
     #tblContainer, #tblcollections, #tblCRUD, td {
-    border: double;
+        border: double;
     }
 
     th {
-    background-color: darkgray;
+        background-color: darkgray;
     }
 
     #dvcollection {
-    height: 500px;
-    overflow-y: scroll;
-    }    
-    </style>
-    
+        height: 500px;
+        overflow-y: scroll;
+    }
+</style>
 
 
-    <h2>Using Angular for Performing CRUD Operations</h2>
-</head>
-<body ng-app="app">
-<div>
+<div ng-app="crudModule" ng-controller="crudController">
+
+
     <table>
         <tr>
-            <table>
-                <tr>
-                    <td>
-                        Employee Number:
-                    </td>
-                    <td>
-                        {{EmpNo}}
-                    </td>
-                </tr>
-            </table>
+            <td>
+                <table id="tblContainer">
+                    <tr>
+                        <td>
+                            EmpNo :
+                        </td>
+                        <td>
+                            <input type="text" ng-model="EmpNo" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            EmpName :
+                        </td>
+                        <td>
+                            <input type="text" ng-model="EmpName" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Salary :
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Salary" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            DeptName :
+                        </td>
+                        <td>
+                            <input type="text" ng-model="DeptName" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Designation :
+                        </td>
+                        <td>
+                            <input type="text" ng-model="Designation"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="button" ng-click="save()" value="save"/></td>
+                        @*<td><input type="button" ng-click="save()" value="Edit"/></td>*@
+                        <td><input type="button" ng-click="delete()" value="Delete" /></td>
+                    </tr>
+                </table>
+            </td>
+
+            <td>
+                <table id="tblcollections">
+                    <thead>
+                    <th>EmpNo</th>
+                    <th>EmpName</th>
+                    <th>Salary</th>
+                    <th>DeptName</th>
+                    <th>Designation</th>
+
+                    </thead>
+                    <tbody ng-repeat="Emp in Employees">
+                        <tr ng-click="get(Emp)">
+                            <td>{{Emp.EmpNo}}</td>
+                            <td>{{Emp.EmpName}}</td>
+                            <td>{{Emp.Salary}}</td>
+                            <td>{{Emp.DeptName}}</td>
+                            <td>{{Emp.Designation}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
         </tr>
-        <tr>
-            <table>
-                <tr>
-                    <th>
-                        Empno
-                    </th>
-                </tr>
-            </table>
-        </tr>
+
     </table>
 </div>
-</body>
-</html>
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/CRUDAngular/Module.js"></script>
+<script src="~/Scripts/CRUDAngular/Service.js"></script>
+<script src="~/Scripts/CRUDAngular/Controller.js"></script>
+
+@*<html>
+    <head>
+
+
+
+        <meta name="viewport" content="width=device-width"/>
+        <title>Index</title>
+        <style type="text/css">
+            #tblContainer, #tblcollections, #tblCRUD, td {
+                border: double;
+            }
+
+            th {
+                background-color: darkgray;
+            }
+
+            #dvcollection {
+                height: 500px;
+                overflow-y: scroll;
+            }
+        </style>
+
+
+
+        <h2>Using Angular for Performing CRUD Operations</h2>
+    </head>
+    <body ng-app="crudModule">
+    <div ng-controller="crudController">
+        <table id="tblContainer">
+            <tr>
+                <table>
+                    <tr>
+                        <td>
+                            Employee Number:
+                        </td>
+                        <td>
+                            <input type="text" ng-model="EmpNo" readonly="readonly"/>
+                        </td>
+                    </tr>
+                </table>
+            </tr>
+            <tr>
+                <table id="tblcollections">
+                    <tr>
+
+                        <th>EmpNo</th>
+                        <th>EmpName</th>
+                        <th>Salary</th>
+                        <th>DeptName</th>
+                        <th>Designation</th>
+
+                    </tr>
+                    <tbody ng-repeat="Emp in Employees">
+                    <tr ng-click="get(Emp)">
+                        <td>
+                            {{Emp.EmpNo}}
+                        </td>
+                        <td>
+                            {{Emp.EmpName}}
+                        </td>
+                        <td>
+                            {{Emp.Salary}}
+                        </td>
+                        <td>
+                            {{Emp.DeptName}}
+                        </td>
+                        <td>
+                            {{Emp.Designation}}
+                        </td>
+                    </tr>
+                    </tbody>
+
+                </table>
+            </tr>
+        </table>
+    </div>
+        <script src="~/Scripts/angular.js"></script>
+        <script src="~/Scripts/CRUDAngular/Module.js"></script>
+        <script src="~/Scripts/CRUDAngular/Service.js"></script>
+        <script src="~/Scripts/CRUDAngular/Controller.js"></script>
+    </body>
+    </html>*@

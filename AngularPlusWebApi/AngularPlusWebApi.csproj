@@ -20,6 +20,7 @@
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -162,22 +163,22 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs">
-      <DependentUpon>EmployeeEf.tt</DependentUpon>
+      <DependentUpon>EmployeeEF.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmployeeEf.Context.cs">
+    <Compile Include="Models\EmployeeEF.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeEf.Context.tt</DependentUpon>
+      <DependentUpon>EmployeeEF.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmployeeEf.cs">
+    <Compile Include="Models\EmployeeEF.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeEf.tt</DependentUpon>
+      <DependentUpon>EmployeeEF.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\EmployeeEf.Designer.cs">
+    <Compile Include="Models\EmployeeEF.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>EmployeeEf.edmx</DependentUpon>
+      <DependentUpon>EmployeeEF.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -192,6 +193,16 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="HtmlPage1.html" />
+    <Content Include="Models\EmployeeEF.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EmployeeEF.edmx</DependentUpon>
+      <LastGenOutput>EmployeeEF.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\EmployeeEF.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EmployeeEF.edmx</DependentUpon>
+      <LastGenOutput>EmployeeEF.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-aria.js" />
@@ -256,22 +267,12 @@
     <Content Include="Scripts\angular-aria.min.js.map" />
     <Content Include="Scripts\angular-animate.min.js.map" />
     <Content Include="Scripts\angular.min.js.map" />
-    <EntityDeploy Include="Models\EmployeeEf.edmx">
+    <EntityDeploy Include="Models\EmployeeEF.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>EmployeeEf.Designer.cs</LastGenOutput>
+      <LastGenOutput>EmployeeEF.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\EmployeeEf.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EmployeeEf.edmx</DependentUpon>
-      <LastGenOutput>EmployeeEf.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\EmployeeEf.edmx.diagram">
-      <DependentUpon>EmployeeEf.edmx</DependentUpon>
-    </Content>
-    <Content Include="Models\EmployeeEf.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>EmployeeEf.edmx</DependentUpon>
-      <LastGenOutput>EmployeeEf.cs</LastGenOutput>
+    <Content Include="Models\EmployeeEF.edmx.diagram">
+      <DependentUpon>EmployeeEF.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\i18n\angular-locale_aa-dj.js" />
